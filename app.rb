@@ -8,8 +8,14 @@ class Account < ActiveRecord::Base
   self.table_name = 'salesforce.account'
 end
 
+require 'uri'
+url = "https://secure-ridge-80630.herokuapp.com/accounts?email=piyumi@velocityimplementations.com.au"
+uri    = URI.parse(url)
+params = CGI::parse(uri.query)
+params['email'] 
+
 get "/accounts?email" do
-  @accounts = Account.find(params[?email])
+  @accounts = Account.find(params['email'])
   erb :index
 end
 
