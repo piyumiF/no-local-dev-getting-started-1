@@ -4,12 +4,12 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-class Contact < ActiveRecord::Base
-  self.table_name = 'salesforce.contact'
+class Order < ActiveRecord::Base
+  self.table_name = 'salesforce.order'
 end
 
-get "/contacts" do
-  @contacts = Contact.all
+get "/orders" do
+  @orders = Order.all
   erb :index
 end
 
