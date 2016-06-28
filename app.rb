@@ -5,13 +5,18 @@ require 'sinatra/activerecord'
 require './environments'
 
 
-get "/" do
-  erb :home
+class Account < ActiveRecord::Base
+  self.table_name = 'salesforce.account'
+end
+
+get "/accounts" do
+  @orders = Account.all
+  erb :index
 end
 
 
-class Contact < ActiveRecord::Base
-  self.table_name = 'salesforce.contact'
+class Account < ActiveRecord::Base
+  self.table_name = 'salesforce.account'
 end
 
 #get "/contacts" do
