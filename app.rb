@@ -14,7 +14,7 @@ end
 #end
 
 get "/accounts" do
-@accounts = Account.where(params[:email])
+@accounts = Account.where(email:email)
 erb :index
 end
 
