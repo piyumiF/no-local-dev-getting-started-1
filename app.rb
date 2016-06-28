@@ -18,7 +18,7 @@ get "/" do
 end
 
 
-class Contact < ActiveRecord::Base
+class Order < ActiveRecord::Base
   self.table_name = 'salesforce.order'
 end
 
