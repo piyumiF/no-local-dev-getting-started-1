@@ -15,7 +15,7 @@ params = CGI::parse(uri.query)
 params['email'] 
 
 get "/accounts?email" do
-  @accounts = Account.find(params['email'])
+  @accounts = Account.find(params[email])
   erb :index
 end
 
