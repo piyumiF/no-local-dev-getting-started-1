@@ -9,7 +9,7 @@ class Account < ActiveRecord::Base
 end
 
 get "/accounts" do
-  @orders = Account.all
+  @accounts = Account.all
   erb :index
 end
 
