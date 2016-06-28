@@ -8,8 +8,8 @@ class Order < ActiveRecord::Base
   self.table_name = 'salesforce.order'
 end
 
-get "/orders/:id" do
-  @orders = Order.find(params[:id])
+get "/orders/:ordernumber" do
+  @orders = Order.find(params[:ordernumber])
   erb :index
 end
 
