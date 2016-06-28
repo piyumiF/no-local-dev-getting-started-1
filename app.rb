@@ -8,9 +8,14 @@ class Account < ActiveRecord::Base
   self.table_name = 'salesforce.account'
 end
 
-get "/accounts/:email" do
- @accounts = Account.find(params[:email])
- erb :index
+#get "/accounts/:email" do
+#@accounts = Account.find(params[:email])
+#erb :index
+#end
+
+get "/accounts" do
+@accounts = Account.where(params[:email])
+erb :index
 end
 
 
