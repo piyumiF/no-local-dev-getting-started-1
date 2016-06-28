@@ -9,7 +9,7 @@ class Account < ActiveRecord::Base
 end
 
 get "/accounts" do
-  @accounts = Account.all
+  @accounts = Account.find(params[?email])
   erb :index
 end
 
