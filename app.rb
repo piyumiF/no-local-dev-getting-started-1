@@ -16,7 +16,7 @@ end
 get "/accounts" do
  
 #@accounts = Account.where(email:'piyumi@velocityimplementations.com.au')
- @accounts =Account.email.any?
+ @accounts =Account.where(email: "piyumi@velocityimplementations.com.au")
 erb :index
 end
 
