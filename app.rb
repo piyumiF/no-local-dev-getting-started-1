@@ -16,7 +16,7 @@ end
 get "/accounts" do
  
 #@accounts = Account.where(email:'piyumi@velocityimplementations.com.au')
- @accounts ="SELECT Id,Name from Account"
+ @accounts ="select name from Account"
 erb :index
 end
 
